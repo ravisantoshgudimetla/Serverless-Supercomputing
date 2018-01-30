@@ -59,17 +59,17 @@ Scope and Features Of The Project:
 * Pick a distributed algorithm to solve.
 
 
-##### Release 3 (Due 02/16/2018)
+##### Release 3 (Due 03/2/2018)
 * Build the algorithm to run on OpenWhisk on OpenShift
 
-##### Release 4 (Due 02/16/2018)
+##### Release 4 (Due 03/16/2018)
 * Proved that the algorithm should scale linearly
 
-##### Release 5 (Due 02/16/2018)
+##### Release 5 (Due 03/30/2018)
 * Provide performance tests to validate the improved performance at scale
 
-##### Release 6 (Due 02/16/2018)
+##### Release 6 (Due 04/13/2018)
 * Deploy OpenWhisk onto OpenShift on the MOC
 
-##### Release 7 (Due 02/16/2018)
+##### Release 7 (Due 04/27/2018)
 * Test the algorithm as scale and provide performance data of the results
