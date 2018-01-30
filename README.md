@@ -15,15 +15,12 @@ The goal of this project is to build an on demand "supercomputer" out of OpenWhi
 ** **
 
 ## 3.   Scope and Features Of The Project:
-
-    * An orchestrator that is capable of distributing a parallelizable function on OpenWhisk on OpenShift environment
-        at low cost and as fast as possible
+  * An orchestrator that is capable of distributing a parallelizable function on OpenWhisk on OpenShift environment at low cost and as fast as possible
+  
+  * The orchestrator should be extendable to create an on demand supercomputer for parallelizable tasks on OpenWhisk on OpenShift in the MoC.
+  
+  * Ability to move to different vendors
     
-    * The orchestrator should be extendable to create an on demand supercomputer for parallelizable tasks on OpenWhisk
-        on OpenShift in the MoC.
-    
-    * Ability to move to different vendors
-
 ** **
 
 ## 4. Solution Concept
