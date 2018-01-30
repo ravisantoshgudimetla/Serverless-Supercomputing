@@ -46,7 +46,7 @@ Scope and Features Of The Project:
 
 Release planning section describes how the project will deliver incremental sets of features and functions in a series of releases to completion. Identification of user stories associated with iterations that will ease/guide sprint planning sessions is encouraged. Higher level details for the first iteration is expected.
 
-### Release 1 (Due 02/02/2018)
+##### Release 1 (Due 02/02/2018)
 * Compiling the project proposal. 
 * Reading the literature on the technologies we are going to use like OpenShift, OpenWhisk, Parallel Computing and Containerisation.
 
