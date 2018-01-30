@@ -9,7 +9,8 @@ The goal of this project is to build an on demand "supercomputer" out of OpenWhi
 
 ## 2. Users/Personas Of The Project:
 
-This section describes the principal user roles of the project together with the key characteristics of these roles. This information will inform the design and the user scenarios. A complete set of roles helps in ensuring that high-level requirements can be identified in the product backlog.
+- Any individual/institution looking for a solution of large scale distributed algorithm as fast as possible
+- Any scenario where Big Data uses cases are extensively used, e.g. 360 degree view of customer(including customer's dempgraphic,credit    history,etc) required by banks/insurance companys,price optimization done B2B or B2C business,etc
 
 ** **
 
@@ -38,7 +39,8 @@ Scope and Features Of The Project:
 
 ## 5. Acceptance criteria
 
-This section discusses the minimum acceptance criteria at the end of the project and stretch goals.
+- Any polynomial time algorithm should be scaled linearly
+- The scaling should ideally be done in 30 seconds or less
 
 ## 6.  Release Planning:
 
