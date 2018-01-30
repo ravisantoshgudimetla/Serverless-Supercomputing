@@ -45,3 +45,29 @@ Scope and Features Of The Project:
 ## 6.  Release Planning:
 
 Release planning section describes how the project will deliver incremental sets of features and functions in a series of releases to completion. Identification of user stories associated with iterations that will ease/guide sprint planning sessions is encouraged. Higher level details for the first iteration is expected.
+
+### Release 1 (Due 02/02/2018)
+* Compiling the project proposal. 
+* Reading the literature on the technologies we are going to use like OpenShift, OpenWhisk, Parallel Computing and Containerisation.
+
+### Release 2 (Due 02/16/2018)
+* Able to finish the installation on everyone's machine. 
+* Stand up OpenWhisk on OpenShift locally to develop an algorithm.
+* Being able to run a hello world program in the dev environment.
+* Pick a distributed algorithm to solve.
+
+
+### Release 3 (Due 02/16/2018)
+* Build the algorithm to run on OpenWhisk on OpenShift
+
+### Release 4 (Due 02/16/2018)
+* Proved that the algorithm should scale linearly
+
+### Release 5 (Due 02/16/2018)
+* Provide performance tests to validate the improved performance at scale
+
+### Release 6 (Due 02/16/2018)
+* Deploy OpenWhisk onto OpenShift on the MOC
+
+### Release 7 (Due 02/16/2018)
+* Test the algorithm as scale and provide performance data of the results
