@@ -4,13 +4,13 @@ Serverless/FaaS computing really started taking off with the launch of AWS Lamba
 
 ## 1.   Vision and Goals Of The Project:
 
-The goal of this project is to build an on demand "supercomputer" out of OpenWhisk on OpenShift on OpenStack in the MOC.  Namely, given a task that is highly parallelizable (TBD which task), rather than spin up virtual machines or containers to solve the problem, we can instead use OpenWhisk/FaaS to have an on demand supercomputer.  The goal would be to give a small portion of the work to each function, and spin up 1000s of workers to accomplish the job as quickly as possible.
+The goal of this project is to build an on demand "supercomputer" out of OpenWhisk on OpenShift on OpenStack in the MOC.  Namely, we will take a highly parallelizable function, the computation of pi, and rather than spin up virtual machines or containers to solve the problem, we can instead use OpenWhisk/FaaS to have an on demand supercomputer.  The goal would be to give a small portion of the work to each function, and spin up 1000s of workers to accomplish the job as quickly as possible. We will build a script to act as an orchestrator and coordinate these workers. 
 
 
 ## 2. Users/Personas Of The Project:
 
-- Any individual/institution looking for a solution of large scale distributed algorithm as fast as possible
-- Any scenario where Big Data uses cases are extensively used, e.g. 360 degree view of customer (including customer's demographic, credit    history, etc.) required by banks/insurance companys, price optimization done B2B or B2C business, etc
+There is not a particular end user who will be using this. Rather, this will serve as a proof of concept that OpenWhisk and OpenShift can be used to solve a parallel algorithm. By providing performance metrics, we will be able to show whether or not using FaaS on OpenStack is a viable and cost effective approach for develoment. If successful, an approach like the one we are taking may be used in the future by individual/institution looking for a solution of large scale distributed algorithm as fast and cheaply as possible.
+
 
 ** **
 
@@ -38,12 +38,12 @@ The goal of this project is to build an on demand "supercomputer" out of OpenWhi
 
 ## 5. Acceptance criteria
 
-- The system must be able to parallelize an algorithm to run on OpenWhisk on OpenShift
+- The system must be able to parallelize an algorithm to compute pi and run on OpenWhisk on OpenShift
 - We must provide performance tests to validate the improved performance at scale
 - The system must be deployable on the MOC
 - We must provide performance tests for the sytem running on the MOC
-- The algorithm should scale linearly
-- The scaling should be done in 30 seconds or less
+- The algorithm should scale linearly as more machines are added
+- The the algorithm should run in 30 seconds or less
 
 ## 6.  Release Planning:
 
