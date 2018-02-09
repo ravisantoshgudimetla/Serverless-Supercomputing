@@ -55,20 +55,48 @@ There is not a particular end user who will be using this. Rather, this will ser
 * Able to finish the installation on everyone's machine. 
 * Stand up OpenWhisk on OpenShift locally to develop an algorithm.
 * Being able to run a hello world program in the dev environment.
-* Pick a distributed algorithm to solve.
+* Researching efficient ways of implementing the algorithm whic is to evaluate the value of pi.
+
+* Deliverables
+- Hello world program running on OpenWhisk
+
 
 
 ##### Release 3 (Due 03/2/2018)
-* Build the algorithm to run on OpenWhisk on OpenShift
+* Write the pseudo code of the algorithm
+* Identify the parts of algorithm that can be parallelized
+* Build and Parallelize the algorithm to run on OpenWhisk on OpenShift in JavaScript.
+
+
+* Deliverables
+- Parallelized implementation of the algorithm in JavaScript.
+
 
 ##### Release 4 (Due 03/16/2018)
-* Proved that the algorithm should scale linearly
+* Write the orchestration framework
+
+* Deliverables
+- orchestration framework
 
 ##### Release 5 (Due 03/30/2018)
-* Provide performance tests to validate the improved performance at scale
+* Run and test the algorithm on local OpenShift
+* Analyse if the computation time decreases linearly and relative to the number of additional pods added
+* Prove that the algorithm should scale linearly
+
+* Deliverables
+- Test the algorithm as scale and provide performance data of the results
 
 ##### Release 6 (Due 04/13/2018)
 * Deploy OpenWhisk onto OpenShift on the MOC
 
+* Deliverables
+- Performance report proving that computation time reduces relatively to the number of pods added
+- Performance report indicating that the value of pi was calculated under 30 sec
+
 ##### Release 7 (Due 04/27/2018)
-* Test the algorithm as scale and provide performance data of the results
+* Rigours system testing
+* Fixing bugs
+* POC handover
+
+* Deliverables
+- Performance Report
