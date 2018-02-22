@@ -121,9 +121,7 @@ const triggerActionPromises = function(){
 
 registerActionPromise.then(triggerActionPromises).then((resp) => {
 	if (resp){
-		console.log('---------------------------------------------');
-		console.log(resp);
-		console.log('---------------------------------------------');
+		
 		var totalInCircle = 0;
 		const totalPoints = NUM_ACTIONS * POINTS_PER_ACTION;
 		for (var i = 0; i< resp.length; i++){
