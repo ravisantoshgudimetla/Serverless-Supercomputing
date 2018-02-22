@@ -14,7 +14,7 @@ var USER = split_auth[0];
 var PWD = split_auth[1];
 //console.log(USER, PWD);
 
-const NUM_ACTIONS = 10;
+const NUM_ACTIONS = 100;
 const TOTAL_POINTS = 100000;
 const POINTS_PER_ACTION = TOTAL_POINTS / NUM_ACTIONS;
 
