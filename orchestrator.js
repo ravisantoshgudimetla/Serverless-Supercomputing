@@ -1,3 +1,5 @@
+const startingMilliseconds = Date.now();
+
 const execSync = require('child_process').execSync;
 var apiCommandOutput = execSync('wsk property get --apihost').toString();
 // Command returns in form 'wsk api host [APIHOST]' so we split string to get host
@@ -13,7 +15,9 @@ var PWD = split_auth[1];
 //console.log(USER, PWD);
 
 const NUM_ACTIONS = 10;
-const POINTS_PER_ACTION = 1000;
+const TOTAL_POINTS = 100000;
+const POINTS_PER_ACTION = TOTAL_POINTS / NUM_ACTIONS;
+
 
 // Ignore self signed cert
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
@@ -34,7 +38,6 @@ var piFunctionString = "function main(params) { " +
 
 
 const request = require('request');
-const reflect = require('reflect');
 const registerActionPromise = new Promise((resolve, reject) => {
 	var headers = {
     	'Content-Type': 'application/json'
@@ -61,10 +64,11 @@ const registerActionPromise = new Promise((resolve, reject) => {
 	        console.log(body);
 	        console.log("Action Registered");
 	        resolve(body);
+	    } else {
+	    	console.log(error);
+			console.log(response);
+	    	resolve(false);
 	    }
-	    console.log(error);
-		console.log(response);
-	    resolve(true);
 	}
 
 	console.log("Registering action on OpenWhisk");
@@ -73,7 +77,6 @@ const registerActionPromise = new Promise((resolve, reject) => {
 
 const triggerActionPromise = function(){
 	return new Promise((resolve, reject) => {
-		console.log('Triggering Action')
 		var headers = {
 	    	'Content-Type': 'application/json'
 		};
@@ -91,11 +94,12 @@ const triggerActionPromise = function(){
 
 		function callback(error, response, body) {
 		    if (!error && response.statusCode == 200) {
-		        resolve(JSON.parse(body))
+		        resolve(JSON.parse(body));
+		    } else {
+		    	console.log(error);
+				console.log(response);
+			    resolve(false);
 		    }
-		    //console.log(error);
-			//console.log(response);
-		    resolve(false);
 		}
 
 		request(options, callback);
@@ -107,6 +111,7 @@ const triggerActionPromises = function(){
 	for (var i=0; i < NUM_ACTIONS; i++){
 		arr.push(triggerActionPromise());
 	}
+	console.log('Triggering Actions');
 	return new Promise((resolve, reject) => {
 		Promise.all(arr).then((res) => {
 			resolve(res);
@@ -115,7 +120,6 @@ const triggerActionPromises = function(){
 }
 
 registerActionPromise.then(triggerActionPromises).then((resp) => {
-	//console.log(resp);
 	if (resp){
 		console.log('---------------------------------------------');
 		console.log(resp);
@@ -129,14 +133,10 @@ registerActionPromise.then(triggerActionPromises).then((resp) => {
 		}
 		console.log(totalInCircle + " out of " + totalPoints + " were in the circle.");
 		console.log("Computed Value of Pi: " + 4 * (totalInCircle / totalPoints));
+		console.log("Finished in " + ((Date.now() - startingMilliseconds) / 1000) + " seconds");
 	} else {
 		console.log('it didnt work')
 	}
 	
 });
-
-// registerActionPromise.then((resp) => {
-// 	console.log('all done!!!');
-// });
-
 
