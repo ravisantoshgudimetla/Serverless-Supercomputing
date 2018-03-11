@@ -1,27 +1,25 @@
 const startingMilliseconds = Date.now();
-
 const execSync = require('child_process').execSync;
 var apiCommandOutput = execSync('wsk property get --apihost').toString();
 // Command returns in form 'wsk api host [APIHOST]' so we split string to get host
 var APIHOST = apiCommandOutput.split(/\s+/)[3]; 
-//console.log(APIHOST);
+console.log(APIHOST);
 
-var authCommandOutput = execSync('wsk property get --auth').toString();
+var authCommandOutput = execSync('sudo wsk -i property get --auth').toString();
 // Command returns in form 'wisk auth [AUTH]' so we split string to get auth
 var AUTH = authCommandOutput.split(/\s+/)[2];
 var split_auth = AUTH.split(':');
 var USER = split_auth[0];
 var PWD = split_auth[1];
-//console.log(USER, PWD);
+// console.log(USER, PWD);
 
-const NUM_ACTIONS = 100;
+const NUM_ACTIONS = 20;
 const TOTAL_POINTS = 100000;
 const POINTS_PER_ACTION = TOTAL_POINTS / NUM_ACTIONS;
-
+var begin 
 
 // Ignore self signed cert
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
-
 var piFunctionString = "function main(params) { " +
 	"var numPoints = parseInt(params.numPoints); " +
 	"var inCircle = 0; " +
@@ -37,6 +35,10 @@ var piFunctionString = "function main(params) { " +
 "}";
 
 
+
+
+
+const fs = require('fs')
 const request = require('request');
 const registerActionPromise = new Promise((resolve, reject) => {
 	var headers = {
@@ -63,6 +65,7 @@ const registerActionPromise = new Promise((resolve, reject) => {
 	    if (!error && response.statusCode == 200) {
 	        console.log(body);
 	        console.log("Action Registered");
+		begin = process.cpuUsage()
 	        resolve(body);
 	    } else {
 	    	console.log(error);
@@ -73,9 +76,11 @@ const registerActionPromise = new Promise((resolve, reject) => {
 
 	console.log("Registering action on OpenWhisk");
 	request(options, callback);
+	
 });
 
 const triggerActionPromise = function(){
+	
 	return new Promise((resolve, reject) => {
 		var headers = {
 	    	'Content-Type': 'application/json'
@@ -131,7 +136,19 @@ registerActionPromise.then(triggerActionPromises).then((resp) => {
 		}
 		console.log(totalInCircle + " out of " + totalPoints + " were in the circle.");
 		console.log("Computed Value of Pi: " + 4 * (totalInCircle / totalPoints));
-		console.log("Finished in " + ((Date.now() - startingMilliseconds) / 1000) + " seconds");
+		const TIME_TAKEN = ((Date.now() - startingMilliseconds) / 1000)
+		end = process.cpuUsage(begin)
+		console.log("Finished in " + TIME_TAKEN + " seconds");
+		const PI = 4 * (totalInCircle / totalPoints)
+
+		fs.appendFile("/home/fedora/project/stats.txt", "\n" + "NUM_ACTIONS:" + NUM_ACTIONS + "," + "TIME_TAKEN:" + TIME_TAKEN + ",PI:" + PI + ",CPU:"+ end.system/1000000, function(err) {
+		    if(err) {
+        		return console.log(err);
+    		}
+
+		    console.log("The file was saved!");
+		}); 
+
 	} else {
 		console.log('it didnt work')
 	}
