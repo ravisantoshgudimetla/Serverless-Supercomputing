@@ -145,7 +145,6 @@ registerActionPromise.then(triggerActionPromises).then((resp) => {
 		    if(err) {
         		return console.log(err);
     		}
-
 		    console.log("The file was saved!");
 		}); 
 
