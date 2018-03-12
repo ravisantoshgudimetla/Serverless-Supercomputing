@@ -13,7 +13,7 @@ var USER = split_auth[0];
 var PWD = split_auth[1];
 // console.log(USER, PWD);
 
-const NUM_ACTIONS = 90;
+const NUM_ACTIONS = 30;
 const TOTAL_POINTS = 100000;
 const POINTS_PER_ACTION = TOTAL_POINTS / NUM_ACTIONS;
 var begin 
@@ -141,7 +141,7 @@ registerActionPromise.then(triggerActionPromises).then((resp) => {
 		console.log("Finished in " + TIME_TAKEN + " seconds");
 		const PI = 4 * (totalInCircle / totalPoints)
 
-		fs.appendFile("/home/fedora/project/stats.txt", "\n" + "NUM_ACTIONS:" + NUM_ACTIONS + "," + "TIME_TAKEN:" + TIME_TAKEN + ",PI:" + PI + ",CPU:"+ (end.system+end.user)/1000000, function(err) {
+		fs.appendFile("./performance/stats.txt", "\n" + "NUM_ACTIONS:" + NUM_ACTIONS + "," + "TIME_TAKEN:" + TIME_TAKEN + ",PI:" + PI + ",CPU:"+ (end.system+end.user)/1000000, function(err) {
 		    if(err) {
         		return console.log(err);
     		}
