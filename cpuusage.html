@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+  <script type="text/javascript" src="/js/lib/dummy.js"></script>
+
+  
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  
+    
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+
+  <style type="text/css">
+    
+  </style>
+
+  <title>chart.js line 2.0</title>
+
+  
+</head>
+
+<body>
+  <canvas id="actionsCPUChart" width="400" height="250"></canvas>
+
+<script type="text/javascript">//<![CDATA[
+
+var canvas = document.getElementById('actionsCPUChart');
+var data = {
+    labels: ["20", "30", "40", "50", "60", "70", "80", "90", "100", "150", "200", "250", "300"],
+    datasets: [
+        {
+            label: "# Actions vs CPU usage",
+            fill: false,
+            lineTension: 0.1,
+            backgroundColor: "rgba(75,192,192,0.4)",
+            borderColor: "rgba(75,192,192,1)",
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: "rgba(75,192,192,1)",
+            pointBackgroundColor: "#fff",
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "rgba(75,192,192,1)",
+            pointHoverBorderColor: "rgba(220,220,220,1)",
+            pointHoverBorderWidth: 2,
+            pointRadius: 5,
+            pointHitRadius: 10,
+            //CPU usage (time)
+            data: [0.08783, 0.122124, 0.150908, 0.181285,0.234072, 0.252734, 0.268217, 0.298763, 0.352821, 0.545401, 0.802406, 0.988475, 1.172236],
+        }
+    ]
+};
+
+var option = {
+	showLines: true
+};
+var myLineChart = Chart.Line(canvas,{
+	data:data,
+  options:option
+});
+
+
+
+//]]> 
+
+</script>
+
+  <script>
+  // tell the embed parent frame the height of the content
+  if (window.parent && window.parent.parent){
+    window.parent.parent.postMessage(["resultsFrame", {
+      height: document.body.getBoundingClientRect().height,
+      slug: "c8jq5Lt0"
+    }], "*")
+  }
+</script>
+
+</body>
+
+</html>
+
+
