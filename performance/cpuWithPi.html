@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script type="text/javascript" src="/js/lib/dummy.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+    
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.js"></script>
+
+  <style type="text/css">
+    canvas { background-color : #eee;
+}
+  </style>
+
+  <title>CPU usage and Pi Value</title>
+
+
+<script type="text/javascript">//<![CDATA[
+window.onload=function(){
+var options = {
+  type: 'line',
+  data: {
+    labels: ["20", "30", "40", "50", "60", "70", "80", "90", "100", "150", "200", "250", "300"],
+    datasets: [
+	    {
+	      label: 'CPU USage',
+	      data: [0.08783, 0.122124, 0.150908, 0.181285,0.234072, 0.252734, 0.268217, 0.298763, 0.352821, 0.545401, 0.802406, 0.988475, 1.172236],
+      	borderWidth: 1
+    	},	
+			{
+				label: 'PI Value',
+				data: [3.13844, 3.14544, 3.1302, 3.13912, 3.13624, 3.13408, 3.13892, 3.14308, 3.1428, 3.13972, 3.13608, 3.135, 3.13204],
+				borderWidth: 2
+			},
+      
+		]
+  },
+  options: {
+  	scales: {
+    	yAxes: [{
+        ticks: {
+					reverse: false
+        }
+      }]
+    }
+  }
+}
+
+var ctx = document.getElementById('chartJSContainer').getContext('2d');
+ctx.width = 100
+ctx.height = 30
+new Chart(ctx, options);
+}//]]> 
+
+</script>
+
+  
+</head>
+
+<body>
+  <body>
+    <canvas id="chartJSContainer" width="100" height="30"></canvas>
+</body>
+  
+  <script>
+  // tell the embed parent frame the height of the content
+  if (window.parent && window.parent.parent){
+    window.parent.parent.postMessage(["resultsFrame", {
+      height: document.body.getBoundingClientRect().height,
+      slug: "e8n4xd4z"
+    }], "*")
+  }
+</script>
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script type="text/javascript" src="/js/lib/dummy.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+    
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.js"></script>
+
+  <style type="text/css">
+    canvas { background-color : #eee;
+}
+  </style>
+
+  <title>Total Execution Time</title>
+
+
+<script type="text/javascript">//<![CDATA[
+window.onload=function(){
+var options = {
+  type: 'line',
+  data: {
+    labels: ["20", "30", "40", "50", "60", "70", "80", "90", "100", "150", "200", "250", "300"],
+    datasets: [
+	    {
+        label: 'Time taken',
+        data: [14.327, 24.84, 26.531, 29.663, 23.128, 23.983, 27.043, 24.552, 19.431, 28.971,22.826, 22.759, 28.789],
+        borderWidth: 3
+      },	
+      
+		]
+  },
+  options: {
+  	scales: {
+    	yAxes: [{
+        ticks: {
+					reverse: false
+        }
+      }]
+    }
+  }
+}
+
+var ctx = document.getElementById('chartJSContainer').getContext('2d');
+ctx.height = 100
+new Chart(ctx, options);
+}//]]> 
+
+</script>
+
+  
+</head>
+
+<body>
+  <body>
+    <canvas id="chartJSContainer" width="100" height="30"></canvas>
+</body>
+  
+  <script>
+  // tell the embed parent frame the height of the content
+  if (window.parent && window.parent.parent){
+    window.parent.parent.postMessage(["resultsFrame", {
+      height: document.body.getBoundingClientRect().height,
+      slug: "e8n4xd4z"
+    }], "*")
+  }
+</script>
+
+</body>
+
+</html>
+
+

@@ -4,14 +4,12 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
   
 
   <script type="text/javascript" src="/js/lib/dummy.js"></script>
 
-  
     <link rel="stylesheet" type="text/css" href="/css/result-light.css">
-  
     
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
 
@@ -19,7 +17,7 @@
     
   </style>
 
-  <title>chart.js line 2.0</title>
+  <title>Orchestrator Results</title>
 
   
 </head>
@@ -30,7 +28,9 @@
 <script type="text/javascript">//<![CDATA[
 
 var canvas = document.getElementById('actionsCPUChart');
+canvas.height = 100
 var data = {
+              //NUM_ACTIONS
     labels: ["20", "30", "40", "50", "60", "70", "80", "90", "100", "150", "200", "250", "300"],
     datasets: [
         {
@@ -85,5 +85,3 @@ var myLineChart = Chart.Line(canvas,{
 </body>
 
 </html>
-
-
