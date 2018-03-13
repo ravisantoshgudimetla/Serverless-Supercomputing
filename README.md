@@ -106,12 +106,12 @@ There is not a particular end user who will be using this. Rather, this will ser
 * Docker should be installed
 * OpenShift cli for oc commands
 * OpenWhisk cli setup and wsk binaries path set in $PATH
-* (if running on a VM Node.js should be installed on the machine)
+* If running on a VM Node.js should be installed on the machine
 
 ### Commands
-* systemctl start docker
+* sudo systemctl start docker
 * sudo ip link set docker0 promisc on
-* systemctl restart docker
+* sudo systemctl restart docker
 * sudo oc cluster up
 * sudo oc new-project openwhisk
 * sudo oc process -f ./template.yml |sudo  oc create -f -
