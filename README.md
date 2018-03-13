@@ -108,6 +108,7 @@ There is not a particular end user who will be using this. Rather, this will ser
 * OpenWhisk cli setup and wsk binaries path set in $PATH
 * (if running on a VM Node.js should be installed on the machine)
 
+### Commands
 * systemctl start docker
 * sudo ip link set docker0 promisc on
 * systemctl restart docker
