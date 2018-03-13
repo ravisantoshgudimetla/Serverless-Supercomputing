@@ -103,10 +103,10 @@ There is not a particular end user who will be using this. Rather, this will ser
 
 ## Steps to run orchestrator.js
 - Prerequisite
-Docker should be installed
-OpenShift cli for oc commands
-OpenWhisk cli setup and wsk binaries path set in $PATH
-(if running on a VM Node.js should be installed on the machine)
+* Docker should be installed
+* OpenShift cli for oc commands
+* OpenWhisk cli setup and wsk binaries path set in $PATH
+* (if running on a VM Node.js should be installed on the machine)
 
 systemctl start docker
 sudo ip link set docker0 promisc on
