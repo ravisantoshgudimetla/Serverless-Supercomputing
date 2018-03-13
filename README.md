@@ -102,24 +102,24 @@ There is not a particular end user who will be using this. Rather, this will ser
 - Performance Report
 
 ## Steps to run orchestrator.js
-- Prerequisite
+### Prerequisite
 * Docker should be installed
 * OpenShift cli for oc commands
 * OpenWhisk cli setup and wsk binaries path set in $PATH
 * (if running on a VM Node.js should be installed on the machine)
 
-systemctl start docker
-sudo ip link set docker0 promisc on
-systemctl restart docker
-sudo oc cluster up
-sudo oc new-project openwhisk
-sudo oc process -f ./template.yml |sudo  oc create -f -
+* systemctl start docker
+* sudo ip link set docker0 promisc on
+* systemctl restart docker
+* sudo oc cluster up
+* sudo oc new-project openwhisk
+* sudo oc process -f ./template.yml |sudo  oc create -f -
 
-sudo oc logs -f $(sudo oc get pods | grep controller | awk '{print $1}') | grep "invoker status changed"
+* sudo oc logs -f $(sudo oc get pods | grep controller | awk '{print $1}') | grep "invoker status changed"
 (wait till invoker status changed is healthy)
 
-AUTH_SECRET=$(sudo oc get secret whisk.auth -o yaml | grep "system:" | awk '{print $2}' | base64 --decode) &&
+* AUTH_SECRET=$(sudo oc get secret whisk.auth -o yaml | grep "system:" | awk '{print $2}' | base64 --decode) &&
 /home/fedora/binaries/wsk property set --auth $AUTH_SECRET --apihost $(sudo oc get route/openwhisk --template={{.spec.host}})
 
-node orchestrator.js
+* node orchestrator.js
 
