@@ -1,11 +1,11 @@
-const NUM_ACTIONS = 100;
+const NUM_ACTIONS = 10000;
 const TOTAL_POINTS = 100000;
 const POINTS_PER_ACTION = TOTAL_POINTS / NUM_ACTIONS;
 
 var configs = {
 	"namespace": "_",
 	"actionName": "testPoints",
-	"numActions": 100,
+	"numActions": NUM_ACTIONS,
 	"actionLimits" : {
 		"timeout": 60000,
 		"memory": 128,
